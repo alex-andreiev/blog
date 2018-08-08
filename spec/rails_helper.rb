@@ -11,7 +11,7 @@ require 'faker'
 
 SimpleCov.start
 
-# Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
@@ -27,7 +27,7 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include(Shoulda::Matchers::ActiveModel, type: :model)
   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
-  # config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :controller
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
