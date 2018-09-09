@@ -1,8 +1,7 @@
 FactoryBot.define do
   factory :post do
-    title "MyString"
-    body "MyText"
-    user_id 1
-    user nil
+    title { Faker::Lorem.sentence }
+    body { Faker::Lorem.paragraph_by_chars(500) }
+    user
   end
 end

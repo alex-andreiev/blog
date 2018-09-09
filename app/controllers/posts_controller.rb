@@ -1,7 +1,54 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_post, only: %i[show edit update]
 
   def index
     @posts ||= Post.all
+    authorize @posts
+  end
+
+  def show
+    authorize @post
+  end
+
+  def new
+    @post = Post.new
+    authorize @post
+  end
+
+  def create
+    @post = Post.new(post_params)
+    authorize @post
+
+    if @post.save
+      redirect_to @post
+    else
+      render 'new'
+    end
+  end
+
+  def edit
+    authorize @post
+  end
+
+  def update
+    authorize @post
+
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      render 'edit'
+    end
+  end
+
+  private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def post_params
+    params.require(:post).permit(:id, :title, :body, :user_id)
   end
 end
