@@ -1,3 +1,20 @@
 @import "bootstrap";
 @import "font-awesome";
-@import "blog-home";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+#content {
+  min-height: 69vh;
+}
