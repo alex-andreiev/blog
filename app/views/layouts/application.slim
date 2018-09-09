@@ -10,8 +10,15 @@ html
   body
     p.notice= notice
     p.alert= alert
+
     = render 'layouts/header'
+
     .container#content
+      #flash
+        - flash.each do |key, value|
+          div class='alert alert-primary' role='alert'
+            = value
+
       .row
         = yield
     = render 'layouts/footer'
