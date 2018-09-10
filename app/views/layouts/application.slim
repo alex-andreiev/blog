@@ -8,17 +8,14 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    p.notice= notice
-    p.alert= alert
-
     = render 'layouts/header'
 
-    .container#content
-      #flash
-        - flash.each do |key, value|
-          div class='alert alert-primary' role='alert'
-            = value
+    - if alert || notice
+      p.alert.alert-primary.text-center role='alert'
+        = notice
+        = alert
 
+    .container#content
       .row
         = yield
     = render 'layouts/footer'
