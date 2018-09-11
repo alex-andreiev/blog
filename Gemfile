@@ -7,6 +7,7 @@ ruby '2.5.1'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.1.3'
+gem 'carrierwave', '~> 1.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'font-awesome-rails'
@@ -17,6 +18,7 @@ gem 'grape-swagger-rails'
 gem 'grape_on_rails_routes'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem 'mini_magick'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'pundit'
@@ -27,6 +29,7 @@ gem 'simple_form'
 gem 'slim-rails'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'file_validators'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
