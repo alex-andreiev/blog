@@ -4,6 +4,6 @@
     small Secondary Text
 
   = render partial: 'post', collection: @posts
-
+  = will_paginate @posts, list_classes: %w(pagination justify-content-center)
 .col-md-4
   = render 'layouts/aside'

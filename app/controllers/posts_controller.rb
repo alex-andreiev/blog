@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update]
 
   def index
-    @posts ||= Post.all.includes(:user)
+    @posts ||= Post.all.includes(:user).paginate(page: params[:page]).order('created_at DESC')
     authorize @posts
   end
 
