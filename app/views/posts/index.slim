@@ -1,4 +1,9 @@
 .col-md-8
-   h1.h4 Posts
+  h1.my-4
+    | Page Heading
+    small Secondary Text
+
+  = render partial: 'post', collection: @posts
+  = will_paginate @posts, list_classes: %w(pagination justify-content-center)
 .col-md-4
   = render 'layouts/aside'

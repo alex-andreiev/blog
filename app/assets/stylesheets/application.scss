@@ -18,3 +18,13 @@ body {
 #content {
   min-height: 69vh;
 }
+
+.post-record {
+  .crop {
+    height: 146px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    text-align: justify;
+  }
+}

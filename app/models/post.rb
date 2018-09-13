@@ -8,4 +8,6 @@ class Post < ApplicationRecord
 
   validates :title, :body, presence: true
   validates :image, file_size: { less_than: 1.megabytes }
+
+  self.per_page = 10
 end

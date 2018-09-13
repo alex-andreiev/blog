@@ -1,0 +1,11 @@
+.card.mb-4.post-record
+  = show_image(post.image,'card-img-top')
+  .card-body
+    h2.card-title= post.title
+    p.card-text.crop= post.body
+    = link_to "Read More", post_path(post), class: 'btn btn-primary'
+  .card-footer.text-muted
+    'Posted on
+    = posted_date(post.created_at)
+    'by
+    span.btn-link= post.user.username
