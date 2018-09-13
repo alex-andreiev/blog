@@ -6,5 +6,5 @@ en:
 <p>Macaroon liquorice wafer gummies marshmallow tootsie roll gingerbread halvah bear claw. Powder muffin jelly. Cake jujubes sesame snaps brownie. Bonbon bear claw cookie cheesecake. Apple pie wafer sweet roll biscuit macaroon. Gummies candy pie cake cheesecake cheesecake soufflé. Croissant candy chocolate cake. Marzipan icing cupcake toffee.</p>"
   time:
     formats:
-      created_post: '%B %d, %Y '
-
+      created_date: '%B %d, %Y '
+      created_time: '%H:%M %p'

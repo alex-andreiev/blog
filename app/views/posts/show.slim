@@ -1,0 +1,20 @@
+.col-lg-8
+  h1.mt-4 = @post.title
+  p.lead
+    'by
+    span.btn-link= @post.user.username
+  hr/
+  p
+    'Posted on
+    = posted_date(@post.created_at)
+    'at
+    = posted_time(@post.created_at)
+  hr/
+  = show_image(@post.image, 'img-fluid rounded')
+  hr/
+  = @post.body
+  hr/
+  = render partial: 'comments'
+
+.col-md-4
+  = render 'layouts/aside'
