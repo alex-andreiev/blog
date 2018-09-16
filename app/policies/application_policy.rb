@@ -67,6 +67,8 @@ class ApplicationPolicy
         user.admin?
       when :show_in_app
         user.admin?
+      when :nestable
+        user.admin?
       else
         raise ::Pundit::NotDefinedError, "unable to find policy #{action} for #{record}."
     end

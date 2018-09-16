@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'ancestry'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.1.3'
 gem 'carrierwave', '~> 1.0'
@@ -27,6 +28,7 @@ gem 'pundit'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 5.2.0'
 gem 'rails_admin'
+gem 'rails_admin_nestable', '~> 0.3.2'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form'
 gem 'slim-rails'
