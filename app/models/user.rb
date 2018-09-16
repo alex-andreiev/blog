@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   has_many :posts
 
+  enum role: %i[user admin]
+
   def login
     @login || username || email
   end

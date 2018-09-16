@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ApplicationPolicy
   attr_reader :user, :record
 
@@ -47,5 +45,33 @@ class ApplicationPolicy
     def resolve
       scope.all
     end
+  end
+
+  def rails_admin?(action)
+    case action
+      when :dashboard
+        user.admin?
+      when :index
+        user.admin?
+      when :show
+        user.admin?
+      when :new
+        user.admin?
+      when :edit
+        user.admin?
+      when :destroy
+        user.admin?
+      when :export
+        user.admin?
+      when :history
+        user.admin?
+      when :show_in_app
+        user.admin?
+      else
+        raise ::Pundit::NotDefinedError, "unable to find policy #{action} for #{record}."
+    end
+  end
+
+  def attributes_for(action)
   end
 end
