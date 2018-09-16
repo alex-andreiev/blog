@@ -16,6 +16,23 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
+    nestable
+  end
+
+  config.model Category do
+    field :name
+    field :parent_id, :enum do
+      enum_method do
+        :parent_enum
+      end
+    end
+  end
+
+  config.model Category do
+    nestable_tree({
+      max_depth: 2
+    })
+    nestable_list true
   end
 
   if defined?(WillPaginate)
