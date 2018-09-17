@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  layout 'dashboard'
+
   before_action :set_user
 
   def show

@@ -1,0 +1,532 @@
+nav.side-navbar
+  .side-navbar-wrapper
+    .sidenav-header.d-flex.align-items-center.justify-content-center
+      .sidenav-header-inner.text-center
+        = image_tag 'user_dashboard/avatar.png', class: 'img-fluid rounded-circle'
+        h2.h5 Nathan Andrews
+        span Web Developer
+      .sidenav-header-logo
+        a.brand-small.text-center href="#"
+          strong B
+          strong.text-primary D
+    .main-menu
+      h5.sidenav-heading Main
+      ul#side-main-menu.side-menu.list-unstyled
+        li
+          a href="#"
+            i.icon-home
+            | Home
+        li
+          a href="#"
+            i.icon-form
+            | Forms
+        li
+          a href="#"
+            i.fa.fa-bar-chart
+            | Charts
+        li
+          a href="#"
+            i.icon-grid
+            | Tables
+        li
+          a aria-expanded="false" data-toggle="collapse" href="#exampledropdownDropdown"
+            i.icon-interface-windows
+            | Example dropdown
+          ul#exampledropdownDropdown.collapse.list-unstyled
+            li
+              a href="#"  Page
+            li
+              a href="#"  Page
+            li
+              a href="#"  Page
+        li
+          a href="login.html"
+            i.icon-interface-windows
+            | Login page
+        li
+          a href="#"
+            i.icon-mail
+            | Demo
+          .badge.badge-warning 6 New
+    .admin-menu
+      h5.sidenav-heading Second menu
+      ul#side-admin-menu.side-menu.list-unstyled
+        li
+          a href="#"
+            i.icon-screen
+            | Demo
+        li
+          a href="#"
+            i.icon-flask
+            | Demo
+          .badge.badge-info Special
+        li
+          a href=""
+            i.icon-flask
+            | Demo
+        li
+          a href=""
+            i.icon-picture
+            | Demo
+.page
+  header.header
+    nav.navbar
+      .container-fluid
+        .navbar-holder.d-flex.align-items-center.justify-content-between
+          .navbar-header
+            a#toggle-btn.menu-btn href="#"
+              i.icon-bars
+            a.navbar-brand href="index.html"
+            .brand-text.d-none.d-md-inline-block
+              span Bootstrap
+              strong.text-primary Dashboard
+          ul.nav-menu.list-unstyled.d-flex.flex-md-row.align-items-md-center
+            /! Notifications dropdown
+            li.nav-item.dropdown
+              a#notifications.nav-link aria-expanded="false" aria-haspopup="true" data-target="#" data-toggle="dropdown" href="#" rel="nofollow"
+                i.fa.fa-bell
+                span.badge.badge-warning 12
+              ul.dropdown-menu aria-labelledby="notifications"
+                li
+                  a.dropdown-item href="#" rel="nofollow"
+                  .notification.d-flex.justify-content-between
+                    .notification-content
+                      i.fa.fa-envelope
+                      | You have 6 new messages
+                    .notification-time
+                      small 4 minutes ago
+                li
+                  a.dropdown-item href="#" rel="nofollow"
+                  .notification.d-flex.justify-content-between
+                    .notification-content
+                      i.fa.fa-twitter
+                      | You have 2 followers
+                    .notification-time
+                      small 4 minutes ago
+                li
+                  a.dropdown-item href="#" rel="nofollow"
+                  .notification.d-flex.justify-content-between
+                    .notification-content
+                      i.fa.fa-upload
+                      | Server Rebooted
+                    .notification-time
+                      small 4 minutes ago
+                li
+                  a.dropdown-item href="#" rel="nofollow"
+                  .notification.d-flex.justify-content-between
+                    .notification-content
+                      i.fa.fa-twitter
+                      | You have 2 followers
+                    .notification-time
+                      small 10 minutes ago
+                li
+                  a.dropdown-item.all-notifications.text-center href="#" rel="nofollow"
+                    strong
+                      i.fa.fa-bell
+                      | view all notifications
+            li.nav-item.dropdown
+              a#messages.nav-link aria-expanded="false" aria-haspopup="true" data-target="#" data-toggle="dropdown" href="#" rel="nofollow"
+                i.fa.fa-envelope
+                span.badge.badge-info 10
+              ul.dropdown-menu aria-labelledby="notifications"
+                li
+                  a.dropdown-item.d-flex href="#" rel="nofollow"
+                  .msg-profile
+                    = image_tag 'user_dashboard/avatar.png', class: 'img-fluid rounded-circle'
+                  .msg-body
+                    h3.h5 Jason Doe
+                    span sent you a direct message
+                    small 3 days ago at 7:58 pm - 10.06.2014
+                li
+                  a.dropdown-item.d-flex href="#" rel="nofollow"
+                  .msg-profile
+                    = image_tag 'user_dashboard/avatar.png', class: 'img-fluid rounded-circle'
+                  .msg-body
+                    h3.h5 Frank Williams
+                    span sent you a direct message
+                    small 3 days ago at 7:58 pm - 10.06.2014
+                li
+                  a.dropdown-item.d-flex href="#" rel="nofollow"
+                  .msg-profile
+                    = image_tag 'user_dashboard/avatar.png', class: 'img-fluid rounded-circle'
+                  .msg-body
+                    h3.h5 Ashley Wood
+                    span sent you a direct message
+                    small 3 days ago at 7:58 pm - 10.06.2014
+                li
+                  a.dropdown-item.all-notifications.text-center href="#" rel="nofollow"
+                    strong
+                      i.fa.fa-envelope
+                      | Read all messages
+            li.nav-item.dropdown
+              a#languages.nav-link.language.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-target="#" data-toggle="dropdown" href="#" rel="nofollow"
+                = image_tag 'user_dashboard/flags/16/GB.png', class: 'mr-2'
+                span.d-none.d-sm-inline-block English
+              ul.dropdown-menu aria-labelledby="languages"
+                li
+                  a.dropdown-item href="#" rel="nofollow"
+                    = image_tag 'user_dashboard/flags/16/DE.png', class: 'mr-2'
+                    span German
+                li
+                  a.dropdown-item href="#" rel="nofollow"
+                    = image_tag 'user_dashboard/flags/16/FR.png', class: 'mr-2'
+                    span French
+            li.nav-item
+              a.nav-link.logout href="#"
+                span.d-none.d-sm-inline-block Logout
+                i.fa.fa-sign-out
+  section.dashboard-counts.section-padding
+    .container-fluid
+      .row
+        .col-xl-2.col-md-4.col-6
+          .wrapper.count-title.d-flex
+            .icon
+              i.icon-user
+            .name
+              strong.text-uppercase New Clients
+              span Last 7 days
+              .count-number 25
+        .col-xl-2.col-md-4.col-6
+          .wrapper.count-title.d-flex
+            .icon
+              i.icon-padnote
+            .name
+              strong.text-uppercase Work Orders
+              span Last 5 days
+              .count-number 400
+        .col-xl-2.col-md-4.col-6
+          .wrapper.count-title.d-flex
+            .icon
+              i.icon-check
+            .name
+              strong.text-uppercase New Quotes
+              span Last 2 months
+              .count-number 342
+        .col-xl-2.col-md-4.col-6
+          .wrapper.count-title.d-flex
+            .icon
+              i.icon-bill
+            .name
+              strong.text-uppercase New Invoices
+              span Last 2 days
+              .count-number 123
+        .col-xl-2.col-md-4.col-6
+          .wrapper.count-title.d-flex
+            .icon
+              i.icon-list
+            .name
+              strong.text-uppercase Open Cases
+              span Last 3 months
+              .count-number 92
+        .col-xl-2.col-md-4.col-6
+          .wrapper.count-title.d-flex
+            .icon
+              i.icon-list-1
+            .name
+              strong.text-uppercase New Cases
+              span Last 7 days
+              .count-number 70
+  section.dashboard-header.section-padding
+    .container-fluid
+      .row.d-flex.align-items-md-stretch
+        .col-lg-3.col-md-6
+          .card.to-do
+            h2.display.h4 To do List
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            ul.check-lists.list-unstyled
+              li.d-flex.align-items-center
+                input#list-1.form-control-custom name="list-1" type="checkbox"
+                label for="list-1"  Similique sunt in culpa qui officia
+              li.d-flex.align-items-center
+                input#list-2.form-control-custom name="list-2" type="checkbox"
+                label for="list-2"  Ed ut perspiciatis unde omnis iste
+              li.d-flex.align-items-center
+                input#list-3.form-control-custom name="list-3" type="checkbox"
+                label for="list-3"  At vero eos et accusamus et iusto
+              li.d-flex.align-items-center
+                input#list-4.form-control-custom name="list-4" type="checkbox"
+                label for="list-4"  Explicabo Nemo ipsam voluptatem
+              li.d-flex.align-items-center
+                input#list-5.form-control-custom name="list-5" type="checkbox"
+                label for="list-5"  Similique sunt in culpa qui officia
+              li.d-flex.align-items-center
+                input#list-6.form-control-custom name="list-6" type="checkbox"
+                label for="list-6"  At vero eos et accusamus et iusto
+              li.d-flex.align-items-center
+                input#list-7.form-control-custom name="list-7" type="checkbox"
+                label for="list-7"  Similique sunt in culpa qui officia
+              li.d-flex.align-items-center
+                input#list-8.form-control-custom name="list-8" type="checkbox"
+                label for="list-8"  Ed ut perspiciatis unde omnis iste
+        .col-lg-3.col-md-6
+          .card.project-progress
+            h2.display.h4 Project Beta progress
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            .pie-chart
+              canvas#pieChart height="300" width="300"
+        .col-lg-6.col-md-12.flex-lg-last.flex-md-first.align-self-baseline
+          .card.sales-report
+            h2.display.h4 Sales marketing report
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor amet officiis
+            .line-chart
+              canvas#lineCahrt
+  section.statistics
+    .container-fluid
+      .row.d-flex
+        .col-lg-4
+          .card.income.text-center
+            .icon
+              i.icon-line-chart
+            .number 126,418
+            strong.text-primary All Income
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.
+        .col-lg-4
+          .card.data-usage
+            h2.display.h4 Monthly Usage
+            .row.d-flex.align-items-center
+              .col-sm-6
+                #progress-circle.d-flex.align-items-center.justify-content-center
+              .col-sm-6
+                strong.text-primary 80.56 Gb
+                small Current Plan
+                span 100 Gb Monthly
+            p Lorem ipsum dolor sit amet, consectetur adipisicing.
+        .col-lg-4
+          .card.user-activity
+            h2.display.h4 User Activity
+            .number 210
+            h3.h4.display Social Users
+            .progress
+              .progress-bar.progress-bar.bg-primary aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" role="progressbar" style=("width: 25%")
+            .page-statistics.d-flex.justify-content-between
+              .page-statistics-left
+                span Pages Visits
+                strong 230
+              .page-statistics-right
+                span New Visits
+                strong 73.4%
+  section.mt-30px.mb-30px
+    .container-fluid
+      .row
+        .col-lg-4.col-md-12
+          #new-updates.card.updates.recent-updated
+            #updates-header.card-header.d-flex.justify-content-between.align-items-center
+              h2.h5.display
+                a aria-controls="updates-box" aria-expanded="true" data-parent="#new-updates" data-toggle="collapse" href="#updates-box"  News Updates
+              a aria-controls="updates-box" aria-expanded="true" data-parent="#new-updates" data-toggle="collapse" href="#updates-box"
+                i.fa.fa-angle-down
+            #updates-box.collapse.show role="tabpanel"
+              ul.news.list-unstyled
+                li.d-flex.justify-content-between
+                  .left-col.d-flex
+                    .icon
+                      i.icon-rss-feed
+                    .title
+                      strong Lorem ipsum dolor sit amet.
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+                  .right-col.text-right
+                    .update-date
+                      | 24
+                      span.month Jan
+                li.d-flex.justify-content-between
+                  .left-col.d-flex
+                    .icon
+                      i.icon-rss-feed
+                    .title
+                      strong Lorem ipsum dolor sit amet.
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+                  .right-col.text-right
+                    .update-date
+                      | 24
+                      span.month Jan
+                li.d-flex.justify-content-between
+                  .left-col.d-flex
+                    .icon
+                      i.icon-rss-feed
+                    .title
+                      strong Lorem ipsum dolor sit amet.
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+                  .right-col.text-right
+                    .update-date
+                      | 24
+                      span.month Jan
+                li.d-flex.justify-content-between
+                  .left-col.d-flex
+                    .icon
+                      i.icon-rss-feed
+                    .title
+                      strong Lorem ipsum dolor sit amet.
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+                  .right-col.text-right
+                    .update-date
+                      | 24
+                      span.month Jan
+                li.d-flex.justify-content-between
+                  .left-col.d-flex
+                    .icon
+                      i.icon-rss-feed
+                    .title
+                      strong Lorem ipsum dolor sit amet.
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+                  .right-col.text-right
+                    .update-date
+                      | 24
+                      span.month Jan
+                li.d-flex.justify-content-between
+                  .left-col.d-flex
+                    .icon
+                      i.icon-rss-feed
+                    .title
+                      strong Lorem ipsum dolor sit amet.
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+                  .right-col.text-right
+                    .update-date
+                      | 24
+                      span.month Jan
+        .col-lg-4.col-md-6
+          #daily-feeds.card.updates.daily-feeds
+            #feeds-header.card-header.d-flex.justify-content-between.align-items-center
+              h2.h5.display
+                a aria-controls="feeds-box" aria-expanded="true" data-parent="#daily-feeds" data-toggle="collapse" href="#feeds-box"  Your daily Feeds
+              .right-column
+                .badge.badge-primary 10 messages
+                a aria-controls="feeds-box" aria-expanded="true" data-parent="#daily-feeds" data-toggle="collapse" href="#feeds-box"
+                  i.fa.fa-angle-down
+            #feeds-box.collapse.show role="tabpanel"
+              .feed-box
+                ul.feed-elements.list-unstyled
+                  li.clearfix
+                    .feed.d-flex.justify-content-between
+                      .feed-body.d-flex.justify-content-between
+                        a.feed-profile href="#"
+                          = image_tag 'user_dashboard/avatar.png', class: 'img-fluid rounded-circle'
+                        .content
+                          strong Aria Smith
+                          small Posted a new blog
+                          .full-date
+                            small Today 5:60 pm - 12.06.2014
+                      .date
+                        small 5min ago
+                  li.clearfix
+                    .feed.d-flex.justify-content-between
+                      .feed-body.d-flex.justify-content-between
+                        a.feed-profile href="#"
+                          = image_tag 'user_dashboard/avatar.png', class: 'img-fluid rounded-circle'
+                        .content
+                          strong Frank Williams
+                          small Posted a new blog
+                          .full-date
+                            small Today 5:60 pm - 12.06.2014
+                          .CTAs
+                            a.btn.btn-xs.btn-dark href="#"
+                              i.fa.fa-thumbs-up
+                              | Like
+                            a.btn.btn-xs.btn-dark href="#"
+                              i.fa.fa-heart
+                              | Love
+                      .date
+                        small 5min ago
+                  li.clearfix
+                    .feed.d-flex.justify-content-between
+                      .feed-body.d-flex.justify-content-between
+                        a.feed-profile href="#"
+                          = image_tag 'user_dashboard/avatar.png', class: 'img-fluid rounded-circle'
+                        .content
+                          strong Ashley Wood
+                          small Posted a new blog
+                          .full-date
+                            small Today 5:60 pm - 12.06.2014
+                      .date
+                        small 5min ago
+                  li.clearfix
+                    .feed.d-flex.justify-content-between
+                      .feed-body.d-flex.justify-content-between
+                        a.feed-profile href="#"
+                          = image_tag 'user_dashboard/avatar.png', class: 'img-fluid rounded-circle'
+                        .content
+                          strong Jason Doe
+                          small Posted a new blog
+                          .full-date
+                            small Today 5:60 pm - 12.06.2014
+                      .date
+                        small 5min ago
+                    .message-card
+                      small Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                    .CTAs.pull-right
+                      a.btn.btn-xs.btn-dark href="#"
+                        i.fa.fa-thumbs-up
+                        | Like
+                  li.clearfix
+                    .feed.d-flex.justify-content-between
+                      .feed-body.d-flex.justify-content-between
+                        a.feed-profile href="#"
+                          = image_tag 'user_dashboard/avatar.png', class: 'img-fluid rounded-circle'
+                        .content
+                          strong Sam Martinez
+                          small Posted a new blog
+                          .full-date
+                            small Today 5:60 pm - 12.06.2014
+                      .date
+                        small 5min ago
+        .col-lg-4.col-md-6
+          #recent-activities-wrapper.card.updates.activities
+            #activites-header.card-header.d-flex.justify-content-between.align-items-center
+              h2.h5.display
+                a aria-controls="activities-box" aria-expanded="true" data-parent="#recent-activities-wrapper" data-toggle="collapse" href="#activities-box"  Recent Activities
+              a aria-controls="activities-box" aria-expanded="true" data-parent="#recent-activities-wrapper" data-toggle="collapse" href="#activities-box"
+                i.fa.fa-angle-down
+            #activities-box.collapse.show role="tabpanel"
+              ul.activities.list-unstyled
+                li
+                  .row
+                    .col-4.date-holder.text-right
+                      .icon
+                        i.icon-clock
+                      .date
+                        span 6:00 am
+                        span.text-info 6 hours ago
+                    .col-8.content
+                      strong Meeting
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                li
+                  .row
+                    .col-4.date-holder.text-right
+                      .icon
+                        i.icon-clock
+                      .date
+                        span 6:00 am
+                        span.text-info 6 hours ago
+                    .col-8.content
+                      strong Meeting
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                li
+                  .row
+                    .col-4.date-holder.text-right
+                      .icon
+                        i.icon-clock
+                      .date
+                        span 6:00 am
+                        span.text-info 6 hours ago
+                    .col-8.content
+                      strong Meeting
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                li
+                  .row
+                    .col-4.date-holder.text-right
+                      .icon
+                        i.icon-clock
+                      .date
+                        span 6:00 am
+                        span.text-info 6 hours ago
+                    .col-8.content
+                      strong Meeting
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+  footer.main-footer
+    .container-fluid
+      .row
+        .col-sm-6
+          p Your company &copy; 2017-2019
+        .col-sm-6.text-right
+          p
+            | Design by
+            a.external href="#"  Bootstrapious
