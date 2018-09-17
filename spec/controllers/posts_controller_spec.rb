@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
@@ -7,15 +9,15 @@ RSpec.describe PostsController, type: :controller do
   let(:post_params) { attributes_for(:post, user_id: user.id) }
 
   describe 'GET #index' do
-     subject { get :index }
+    subject { get :index }
 
-     it { is_expected.to render_template 'index' }
-     it { is_expected.to have_http_status 200 }
-     it { subject; expect(assigns(:posts).count).to eq 10 }
+    it { is_expected.to render_template 'index' }
+    it { is_expected.to have_http_status 200 }
+    it { subject; expect(assigns(:posts).count).to eq 10 }
   end
 
   describe 'GET #show' do
-    let(:params){ { id: post_id } }
+    let(:params) { { id: post_id } }
 
     subject { get :show, params: params }
 
@@ -26,7 +28,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe 'GET #new' do
     before do
-      allow_any_instance_of(described_class).to receive(:current_user) {user}
+      allow_any_instance_of(described_class).to receive(:current_user) { user }
       sign_in user
     end
 
@@ -39,7 +41,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe 'POST #create' do
     before do
-      allow_any_instance_of(described_class).to receive(:current_user) {user}
+      allow_any_instance_of(described_class).to receive(:current_user) { user }
       sign_in user
     end
 
@@ -59,7 +61,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe 'GET #edit' do
     before do
-      allow_any_instance_of(described_class).to receive(:current_user) {user}
+      allow_any_instance_of(described_class).to receive(:current_user) { user }
       sign_in user
     end
 
@@ -68,12 +70,12 @@ RSpec.describe PostsController, type: :controller do
     before { get :edit, params: params }
 
     it { is_expected.to render_template 'edit' }
-    it { subject; expect(assigns(:post).id).to eq post_id  }
+    it { subject; expect(assigns(:post).id).to eq post_id }
   end
 
   describe 'PUT #update' do
     before do
-      allow_any_instance_of(described_class).to receive(:current_user) {user}
+      allow_any_instance_of(described_class).to receive(:current_user) { user }
       sign_in user
     end
 

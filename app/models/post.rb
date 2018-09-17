@@ -3,7 +3,7 @@
 class Post < ApplicationRecord
   extend FriendlyId
   extend FriendlyId::Finders
-  friendly_id :slug, use: [:slugged, :finders]
+  friendly_id :slug, use: %i[slugged finders]
 
   belongs_to :user
 
@@ -16,6 +16,6 @@ class Post < ApplicationRecord
   self.per_page = 10
 
   def generate_slug_name
-    "#{title}".downcase.gsub(/[^a-z0-9]/i, '-')
+    title.to_s.downcase.gsub(/[^a-z0-9]/i, '-')
   end
 end

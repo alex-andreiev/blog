@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RailsAdmin.config do |config|
   config.parent_controller = '::ApplicationController'
   config.authenticate_with do
@@ -29,9 +31,9 @@ RailsAdmin.config do |config|
   end
 
   config.model Category do
-    nestable_tree({
+    nestable_tree(
       max_depth: 2
-    })
+    )
     nestable_list true
   end
 
@@ -39,12 +41,17 @@ RailsAdmin.config do |config|
     module WillPaginate
       module ActiveRecord
         module RelationMethods
-          def per(value = nil) per_page(value) end
-          def total_count() count end
+          def per(value = nil)
+            per_page(value)
+          end
+
+          def total_count
+            count
+          end
         end
       end
       module CollectionMethods
-        alias_method :num_pages, :total_pages
+        alias num_pages total_pages
       end
     end
   end
@@ -55,15 +62,15 @@ module RailsAdmin
     module Pundit
       class AuthorizationAdapter
         def authorize(action, abstract_model = nil, model_object = nil)
-          record = model_object || abstract_model && abstract_model.model
+          record = model_object || abstract_model&.model
           if action && !policy(record).send(*action_for_pundit(action))
-            raise ::Pundit::NotAuthorizedError.new("not allowed to #{action} this #{record}")
+            raise Pundit::NotAuthorizedError, "not allowed to #{action} this #{record}"
           end
           @controller.instance_variable_set(:@_pundit_policy_authorized, true)
         end
 
         def authorized?(action, abstract_model = nil, model_object = nil)
-          record = model_object || abstract_model && abstract_model.model
+          record = model_object || abstract_model&.model
           policy(record).send(*action_for_pundit(action)) if action
         end
 
@@ -81,7 +88,7 @@ module RailsAdmin
 
     private
 
-    def user_not_authorized(exception)
+    def user_not_authorized(_exception)
       flash[:alert] = 'You are not authorized to perform this action.'
       redirect_to '/'
     end
