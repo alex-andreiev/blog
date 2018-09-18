@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, multiline: true
 
+  validates :first_name, :last_name, length: {maximum: 20}, allow_blank: true
+
   validates :username, presence: :true, uniqueness: { case_sensitive: false }
 
   has_many :posts
@@ -17,6 +19,10 @@ class User < ApplicationRecord
 
   def login
     @login || username || email
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
   end
 
   def self.find_first_by_auth_conditions(warden_conditions)

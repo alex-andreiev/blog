@@ -3,7 +3,7 @@ nav.side-navbar
     .sidenav-header.d-flex.align-items-center.justify-content-center
       .sidenav-header-inner.text-center
         = image_tag 'user_dashboard/avatar.png', class: 'img-fluid rounded-circle'
-        h2.h5 Nathan Andrews
+        h2.h5= render_username(@user)
         span Web Developer
       .sidenav-header-logo
         a.brand-small.text-center href="#"
@@ -13,7 +13,7 @@ nav.side-navbar
       h5.sidenav-heading Main
       ul#side-main-menu.side-menu.list-unstyled
         li
-          a href="#"
+          a href="/"
             i.icon-home
             | Home
         li
@@ -76,12 +76,10 @@ nav.side-navbar
           .navbar-header
             a#toggle-btn.menu-btn href="#"
               i.icon-bars
-            a.navbar-brand href="index.html"
+            a.navbar-brand href="#"
             .brand-text.d-none.d-md-inline-block
-              span Bootstrap
               strong.text-primary Dashboard
           ul.nav-menu.list-unstyled.d-flex.flex-md-row.align-items-md-center
-            /! Notifications dropdown
             li.nav-item.dropdown
               a#notifications.nav-link aria-expanded="false" aria-haspopup="true" data-target="#" data-toggle="dropdown" href="#" rel="nofollow"
                 i.fa.fa-bell
@@ -172,9 +170,8 @@ nav.side-navbar
                     = image_tag 'user_dashboard/flags/16/FR.png', class: 'mr-2'
                     span French
             li.nav-item
-              a.nav-link.logout href="#"
-                span.d-none.d-sm-inline-block Logout
-                i.fa.fa-sign-out
+              = link_to content_tag('span', t('buttons.signout'), class: 'd-none d-sm-inline-block'),
+                destroy_user_session_path, method: :delete, class: 'nav-link.logout'
   section.dashboard-counts.section-padding
     .container-fluid
       .row
