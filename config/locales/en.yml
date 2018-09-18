@@ -8,3 +8,5 @@ en:
     formats:
       created_date: '%B %d, %Y '
       created_time: '%H:%M %p'
+  buttons:
+    signout: Logout

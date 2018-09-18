@@ -15,8 +15,8 @@ Devise.setup do |config|
   config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
-  config.authentication_keys = [ :login ]
+  config.authentication_keys = [:login]
   config.scoped_views = true
-  config.reset_password_keys = [ :username ]
-  config.confirmation_keys = [ :username ]
+  config.reset_password_keys = [:username]
+  config.confirmation_keys = [:username]
 end

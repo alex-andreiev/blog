@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   mount GrapeSwaggerRails::Engine, at: '/api/docs'
 
   devise_for :users
-  root 'pages#show', page: 'home'
+  root 'posts#index'
   get '/pages/:page' => 'pages#show'
   resources :posts
+  resources :users, only: %i[show edit update]
 end
