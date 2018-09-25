@@ -9,9 +9,9 @@ class User < ApplicationRecord
 
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, multiline: true
 
-  validates :first_name, :last_name, length: {maximum: 20}, allow_blank: true
+  validates :first_name, :last_name, length: { maximum: 20 }, allow_blank: true
 
-  validates :username, presence: :true, uniqueness: { case_sensitive: false }
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
 
   has_many :posts
 
@@ -25,6 +25,7 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  # rubocop:disable all
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
@@ -37,4 +38,5 @@ class User < ApplicationRecord
       end
     end
   end
+  # rubocop:enable all
 end

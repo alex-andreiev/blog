@@ -13,41 +13,50 @@ RSpec.describe PostsController, type: :controller do
 
     it { is_expected.to render_template 'index' }
     it { is_expected.to have_http_status 200 }
-    it { subject; expect(assigns(:posts).count).to eq 10 }
+    it 'when assigns posts' do
+      subject
+      expect(assigns(:posts).count).to eq 10
+    end
   end
 
   describe 'GET #show' do
-    let(:params) { { id: post_id } }
-
     subject { get :show, params: params }
+
+    let(:params) { { id: post_id } }
 
     it { is_expected.to render_template 'show' }
     it { is_expected.to have_http_status 200 }
-    it { subject; expect(assigns(:post)).not_to be_nil }
+    it 'when assigns post' do
+      subject
+      expect(assigns(:post)).not_to be_nil
+    end
   end
 
   describe 'GET #new' do
+    subject { get :new }
+
     before do
       allow_any_instance_of(described_class).to receive(:current_user) { user }
       sign_in user
     end
 
-    subject { get :new }
-
     it { is_expected.to render_template 'new' }
     it { is_expected.to have_http_status 200 }
-    it { subject; expect(assigns(:post)).not_to be_nil }
+    it 'when assigns post' do
+      subject
+      expect(assigns(:post)).not_to be_nil
+    end
   end
 
   describe 'POST #create' do
+    subject { post :create, params: params }
+
     before do
       allow_any_instance_of(described_class).to receive(:current_user) { user }
       sign_in user
     end
 
     let(:params) { { post: post_params } }
-
-    subject { post :create, params: params }
 
     it { is_expected.to redirect_to post_path(Post.last.id) }
     it { expect { subject }.to change(Post, :count).by(1) }
@@ -70,10 +79,15 @@ RSpec.describe PostsController, type: :controller do
     before { get :edit, params: params }
 
     it { is_expected.to render_template 'edit' }
-    it { subject; expect(assigns(:post).id).to eq post_id }
+    it 'when assigns post' do
+      subject
+      expect(assigns(:post).id).to eq post_id
+    end
   end
 
   describe 'PUT #update' do
+    subject { put :update, params: params }
+
     before do
       allow_any_instance_of(described_class).to receive(:current_user) { user }
       sign_in user
@@ -83,10 +97,11 @@ RSpec.describe PostsController, type: :controller do
     let(:title) { Faker::Lorem.sentence }
     let(:params) { { id: post_id, post: { title: title } } }
 
-    subject { put :update, params: params }
-
     it { is_expected.to redirect_to post_path(post_id) }
-    it { expect { subject }.to change { post.reload.title }.from(post.title).to(title) }
+    it 'when post updatet' do
+      expect { subject }.to change { post.reload.title }
+        .from(post.title).to(title)
+    end
 
     describe 'with invalid params' do
       let(:title) { nil }

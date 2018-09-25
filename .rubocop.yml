@@ -1,0 +1,17 @@
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'script/**/*'
+    - 'bin/**/*'
+    - 'log/**/*'
+    - 'spec/support/**/*'
+    - 'config/**/*'
+    - 'Rakefile'
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+Documentation:
+  Enabled: false
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
