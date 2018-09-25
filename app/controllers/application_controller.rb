@@ -6,12 +6,17 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_ransack_params
 
   private
 
   def user_not_authorized
     flash[:alert] = 'You are not authorized to perform this action.'
     redirect_to(request.referrer || root_path)
+  end
+
+  def set_ransack_params
+    @q ||= Post.ransack(params[:q])
   end
 
   protected

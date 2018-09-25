@@ -18,7 +18,7 @@ RSpec.describe PagesController, type: :controller do
     context 'when page is not exists' do
       subject { get :show, params: invalid_params }
 
-      it { is_expected.to render_template(file: "#{Rails.root}/public/404.html") }
+      it { is_expected.to render_template(file: '404.html') }
       it { is_expected.to have_http_status :not_found }
     end
   end

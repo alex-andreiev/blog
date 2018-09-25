@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module PagesHelper
+module PostsHelper
   def posted_date(datetime)
     l(datetime, format: :created_date)
   end

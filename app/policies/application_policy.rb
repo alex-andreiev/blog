@@ -49,6 +49,7 @@ class ApplicationPolicy
     end
   end
 
+  # rubocop:disable all
   def rails_admin?(action)
     case action
     when :dashboard
@@ -75,6 +76,7 @@ class ApplicationPolicy
       raise ::Pundit::NotDefinedError, "unable to find policy #{action} for #{record}."
     end
   end
+  # rubocop:enable all
 
   def attributes_for(action); end
 end

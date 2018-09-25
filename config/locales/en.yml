@@ -10,3 +10,5 @@ en:
       created_time: '%H:%M %p'
   buttons:
     signout: Logout
+  messages:
+    production_mode: The Rails environment is running in production mode!
