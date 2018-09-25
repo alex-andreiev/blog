@@ -13,6 +13,8 @@ class Post < ApplicationRecord
   validates :title, :body, presence: true
   validates :image, file_size: { less_than: 1.megabytes }
 
+  acts_as_taggable
+
   self.per_page = 10
 
   def generate_slug_name

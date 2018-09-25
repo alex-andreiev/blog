@@ -44,6 +44,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def tag_cloud
+    @tags = Post.tag_counts_on(:tags)
+  end
+
   private
 
   def set_post
@@ -54,6 +58,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:id,
                                  :title,
                                  :body,
+                                 :tag_list,
                                  :user_id,
                                  :remove_image,
                                  :remote_image_url,
