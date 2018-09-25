@@ -40,6 +40,11 @@ jobs:
 
       # Run test
       - run:
+          name: Run Rubocop
+          command: bundle exec rubocop
+
+      - run:
+          name: Run Rspec
           command: |
             mkdir /tmp/test-results
             bundle exec rspec --profile 10 \
