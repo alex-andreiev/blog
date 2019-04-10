@@ -15,7 +15,7 @@ RSpec.describe PostsController, type: :controller do
     it { is_expected.to have_http_status 200 }
     it 'when assigns posts' do
       subject
-      expect(assigns(:posts).count).to eq 10
+      expect(assigns(:posts).length).to eq 10
     end
   end
 
