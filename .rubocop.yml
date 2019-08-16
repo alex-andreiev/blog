@@ -9,9 +9,12 @@ AllCops:
     - 'spec/support/**/*'
     - 'config/**/*'
     - 'Rakefile'
+    - 'app/controllers/graphql_controller.rb'
 Naming/MemoizedInstanceVariableName:
   Enabled: false
 Documentation:
   Enabled: false
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context']
+Style/ClassAndModuleChildren:
+  Enabled: false
