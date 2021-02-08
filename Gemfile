@@ -8,7 +8,7 @@ ruby '2.5.1'
 gem 'ancestry'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.3.1'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
